@@ -2,6 +2,7 @@ package com.desafio.service;
 
 import com.desafio.domain.DmView;
 import com.desafio.web.rest.ServicosExternos;
+import com.desafio.web.rest.errors.FeatureNaoSuportadaException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,9 @@ public class DmViewService {
 
     public void verificarFeatureSuportada(String feature){
         DmView dmView = servicosExternos.obter();
-        if(!dmView.getFeatures().contains(feature)){
-            System.out.println();
+        if(dmView.ehFeatureNaoSuportada(feature)){
+            throw new FeatureNaoSuportadaException();
         }
-
     }
 
 }
