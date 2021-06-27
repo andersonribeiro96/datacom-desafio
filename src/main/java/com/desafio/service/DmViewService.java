@@ -1,7 +1,7 @@
 package com.desafio.service;
 
 import com.desafio.domain.DmView;
-import com.desafio.web.rest.ServicosExternos;
+import com.desafio.web.rest.DmViewRestTemplate;
 import com.desafio.web.rest.errors.FeatureNaoSuportadaException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,28 +9,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class DmViewService {
 
-    @Autowired
-    private final ServicosExternos servicosExternos;
+    private static final String FEATURE_SUPORTADA = "Feature suportada";
 
-    public DmViewService(ServicosExternos servicosExternos) {
-        this.servicosExternos = servicosExternos;
+    @Autowired
+    private final DmViewRestTemplate dmViewRestTemplate;
+
+    public DmViewService(DmViewRestTemplate dmViewRestTemplate) {
+        this.dmViewRestTemplate = dmViewRestTemplate;
     }
 
     public String obterNome(){
-        DmView dmView = servicosExternos.obter();
+        DmView dmView = dmViewRestTemplate.obter();
         return dmView.getProduct().getProductName();
     }
 
     public String obterVersao(){
-        DmView dmView = servicosExternos.obter();
+        DmView dmView = dmViewRestTemplate.obter();
         return dmView.getProduct().getSwVersion();
     }
 
-    public void verificarFeatureSuportada(String feature){
-        DmView dmView = servicosExternos.obter();
+    public String verificarFeatureSuportada(String feature){
+        DmView dmView = dmViewRestTemplate.obter();
         if(dmView.ehFeatureNaoSuportada(feature)){
             throw new FeatureNaoSuportadaException();
         }
+        return FEATURE_SUPORTADA;
     }
 
 }

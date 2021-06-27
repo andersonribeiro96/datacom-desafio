@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/dmview")
 public class DmviewResource {
 
-    @Autowired
     private final DmViewService dmViewService;
 
     public DmviewResource(DmViewService dmViewService) {
@@ -35,8 +34,7 @@ public class DmviewResource {
     @GetMapping(value = "/feature/{feature}")
     @ApiOperation(value = "Verifica se determinada feature é suportada")
     public ResponseEntity<String> featureSuportada(@PathVariable String feature){
-        dmViewService.verificarFeatureSuportada(feature);
-        return ResponseEntity.ok("Feature suportada");
+        return ResponseEntity.ok(dmViewService.verificarFeatureSuportada(feature));
     }
 
 }
