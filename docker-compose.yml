@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  desafio-datacom:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: desafio-datacom/api
+    ports:
+    - '8080:8080'

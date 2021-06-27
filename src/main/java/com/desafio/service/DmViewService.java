@@ -3,6 +3,7 @@ package com.desafio.service;
 import com.desafio.domain.DmView;
 import com.desafio.web.rest.DmViewRestTemplate;
 import com.desafio.web.rest.errors.FeatureNaoSuportadaException;
+import org.hibernate.service.spi.InjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,6 @@ public class DmViewService {
 
     private static final String FEATURE_SUPORTADA = "Feature suportada";
 
-    @Autowired
     private final DmViewRestTemplate dmViewRestTemplate;
 
     public DmViewService(DmViewRestTemplate dmViewRestTemplate) {
