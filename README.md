@@ -42,10 +42,7 @@ mvn test
 ```
 mvn package -DskipTests
 ``` 
-### Construir imagem 
-```
-docker build -t desafio .
-``` 
+
 ### Subir stack
 ```
 docker-compose -f docker-compose.yml up -d
@@ -72,7 +69,7 @@ docker-compose -f docker-compose.yml up -d
 ``` 
 
 # Swagger
-http://localhost:8080/swagger-ui/
+http://localhost:8080/swagger-ui.html
 
 ### Obter nome do produto
 
