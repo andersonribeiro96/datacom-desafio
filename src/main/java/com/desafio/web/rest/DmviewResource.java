@@ -2,12 +2,9 @@ package com.desafio.web.rest;
 
 import com.desafio.service.DmViewService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/dmview")
@@ -19,13 +16,13 @@ public class DmviewResource {
         this.dmViewService = dmViewService;
     }
 
-    @GetMapping(value = "/versao")
+    @GetMapping(value = "/versao" , produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Informa a versão do software")
     public ResponseEntity<String> obterVersao(){
         return ResponseEntity.ok(dmViewService.obterVersao());
     }
 
-    @GetMapping(value = "/nome")
+    @GetMapping(value = "/nome", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Informa o nome do produto")
     public ResponseEntity<String> obterNome(){
         return ResponseEntity.ok(dmViewService.obterNome());
