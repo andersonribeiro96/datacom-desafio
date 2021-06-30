@@ -16,13 +16,13 @@ public class DmViewResource {
         this.dmViewService = dmViewService;
     }
 
-    @GetMapping(value = "/versao" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/versao")
     @ApiOperation(value = "Informa a versão do software")
     public ResponseEntity<String> obterVersao(){
         return ResponseEntity.ok(dmViewService.obterVersao());
     }
 
-    @GetMapping(value = "/nome", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/nome")
     @ApiOperation(value = "Informa o nome do produto")
     public ResponseEntity<String> obterNome(){
         return ResponseEntity.ok(dmViewService.obterNome());
