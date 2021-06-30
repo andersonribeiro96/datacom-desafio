@@ -29,6 +29,7 @@ docker-compose version 1.29.1, build c34c88b2
 java -version
 
 openjdk version "1.8" 
+````
 
 ## Ambiente Linux
 
