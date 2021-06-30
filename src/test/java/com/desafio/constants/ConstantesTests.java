@@ -6,9 +6,9 @@ import com.desafio.domain.Product;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public final class Constantes {
+public final class ConstantesTests {
 
-    public Constantes() {
+    public ConstantesTests() {
     }
 
     public static String URL_BASE = "/dmview";

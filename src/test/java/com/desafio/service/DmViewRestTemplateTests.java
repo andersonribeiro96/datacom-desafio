@@ -1,9 +1,7 @@
-package com.desafio.web.rest;
+package com.desafio.service;
 
 import com.desafio.domain.DmView;
 import com.desafio.web.rest.errors.ServicoIndisponivelException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,18 +11,11 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-
-
-import static com.desafio.constants.Constantes.*;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static com.desafio.constants.ConstantesTests.*;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 @RestClientTest(DmViewRestTemplate.class)
 @AutoConfigureWebClient(registerRestTemplate = true)

@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.desafio.constants.Constantes.retornaDmview;
+import static com.desafio.constants.ConstantesTests.retornaDmview;
+
 
 public class DmViewTests {
 

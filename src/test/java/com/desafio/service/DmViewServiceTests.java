@@ -1,7 +1,5 @@
 package com.desafio.service;
 
-import com.desafio.domain.DmView;
-import com.desafio.web.rest.DmViewRestTemplate;
 import com.desafio.web.rest.errors.FeatureNaoSuportadaException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static com.desafio.constants.Constantes.*;
+import static com.desafio.constants.ConstantesTests.*;
 import static org.mockito.Mockito.mock;
 
 public class DmViewServiceTests {

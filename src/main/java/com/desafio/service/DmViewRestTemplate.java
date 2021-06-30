@@ -1,4 +1,4 @@
-package com.desafio.web.rest;
+package com.desafio.service;
 
 import com.desafio.domain.DmView;
 import com.desafio.web.rest.errors.ServicoIndisponivelException;

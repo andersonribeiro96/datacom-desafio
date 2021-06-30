@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/dmview")
-public class DmviewResource {
+public class DmViewResource {
 
     private final DmViewService dmViewService;
 
-    public DmviewResource(DmViewService dmViewService) {
+    public DmViewResource(DmViewService dmViewService) {
         this.dmViewService = dmViewService;
     }
 
