@@ -59,10 +59,7 @@ mvn test
 ```
 mvn package -DskipTests
 ``` 
-### Construir imagem
-```
-docker build -t desafio .
-``` 
+
 ### Subir stack
 ```
 docker-compose -f docker-compose.yml up -d
