@@ -66,7 +66,7 @@ docker-compose -f docker-compose.yml up -d
 ``` 
 
 # Swagger
-http://localhost:8080/v2/api-docs
+http://localhost:8080/swagger-ui.html
 
 ### Obter nome do produto
 
